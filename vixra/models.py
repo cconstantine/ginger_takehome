@@ -63,4 +63,3 @@ class Article(models.Model):
 
 class Author(models.Model):
   name = models.CharField(max_length=1000, unique=True)
-  # articles = models.ManyToManyField('Author', through='Article', blank=True)

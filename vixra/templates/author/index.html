@@ -3,6 +3,6 @@
 <ul>
   {% for author in authors %}
   <li>
-    <a href="{% url 'vixra:author_show' author.id %}">{{ author.name }}</a></li>
+    <a href="{% url 'vixra:author_show' author.id %}">{{ author.name }}</a>({{author.article_set.count}})</li>
   {% endfor %}
 </ul>

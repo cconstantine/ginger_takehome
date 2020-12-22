@@ -22,10 +22,10 @@ def article_show(request, guid):
 # TODO: paginate
 def author_index(request):
   authors = Author.objects.all()
+  #TODO: calculate article counts for all authors in one query
   return render(request, 'author/index.html', {"authors": authors})
 
 def author_show(request, id):
   author = get_object_or_404(Author, id=id)
   articles = author.article_set.all()
-  article_count = articles.count()
-  return render(request, 'author/show.html', {"author": author, 'articles': articles, 'article_count': article_count})
+  return render(request, 'author/show.html', {"author": author, 'articles': articles})

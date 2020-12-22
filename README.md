@@ -11,6 +11,7 @@
  - [x] Make pages for listing and showing articles
  - [x] Make pages for listing and showing authors
  - [x] Linkify authors <-> articles in author and article pages
+ - [ ] Add styles to html
 
 
 ## How to run
