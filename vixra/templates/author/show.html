@@ -1,0 +1,10 @@
+<h1>{{ author.name }}</h1>
+<ul>
+  <h2>Articles</h2>
+  {% for article in articles %}
+  <li><a href="{% url 'vixra:article_show' article.guid %}">{{ article.title }}</a></li>
+  {% endfor %}
+</ul>
+
+
+

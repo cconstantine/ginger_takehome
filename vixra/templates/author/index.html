@@ -1,0 +1,8 @@
+<h1>Authors</h1>
+
+<ul>
+  {% for author in authors %}
+  <li>
+    <a href="{% url 'vixra:author_show' author.id %}">{{ author.name }}</a></li>
+  {% endfor %}
+</ul>

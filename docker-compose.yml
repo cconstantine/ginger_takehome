@@ -1,0 +1,31 @@
+version: '3.7'
+services:
+  db:
+    image: postgres:13.1
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: not_that_secret
+      POSTGRES_USER: app
+  dev:
+    build:
+      context: .
+      target: dev
+    command: /bin/bash
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+  deploy:
+    build:
+      context: .
+      target: deploy
+    ports:
+      - "8001:8000"
+    depends_on:
+      - db
+    command: /bin/bash
+volumes:
+  postgres_data:

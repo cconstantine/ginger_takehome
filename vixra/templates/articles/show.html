@@ -1,0 +1,10 @@
+<h1>{{ article.title }}</h1>
+<ul>
+  <h2>Authors</h2>
+  {% for author in authors %}
+  <li><a href="{% url 'vixra:author_show' author.id %}">{{ author.name }} </a> ({{author.article_set.count}})</li>
+  {% endfor %}
+</ul>
+
+
+<p>{{ article.summary }}</p>
